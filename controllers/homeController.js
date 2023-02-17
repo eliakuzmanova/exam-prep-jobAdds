@@ -4,8 +4,8 @@ const errorUtils = require("../utils/errorUtils");
 exports.getHomeView = async (req, res) => {
 
     try {
-        // const adds = await addService.getFirstThree();
-        res.render('home/index')
+        const adds = await addService.getFirstThree();
+        res.render('home/index', {adds})
     } catch (err) {
         return errorUtils.errorResponse(res, "home/404", err, 404);
     }

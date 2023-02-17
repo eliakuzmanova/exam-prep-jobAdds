@@ -1,17 +1,17 @@
 const addController = require("../services/addService");
 const errorUtils = require("../utils/errorUtils");
 
-// exports.getCatalogView = async (req, res) => {
+exports.getCatalogView = async (req, res) => {
 
-//     try{
-//       const adds = await addController.getAll();
-//       res.render("add/allAds", {adds})
-//     } catch (err) {
+    try{
+      const adds = await addController.getAll();
+      res.render("add/allAdds", {adds})
+    } catch (err) {
 
-//     return errorUtils.errorResponse(res, "home/404", err, 404);
+    return errorUtils.errorResponse(res, "home/404", err, 404);
 
-//    };
-// }
+   };
+}
 
 exports.getCreateView = (req, res) => {
     try {

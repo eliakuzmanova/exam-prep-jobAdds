@@ -10,4 +10,4 @@ exports.update = (data, id) => Add.findByIdAndUpdate(id, {...data});
 
 exports.delete = (id) => Add.findByIdAndRemove(id)
 
-exports.getFirstThree = () => Add.find({}).limit(3)
+exports.getFirstThree = () => Add.find({}).limit(3).lean();

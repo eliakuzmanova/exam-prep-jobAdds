@@ -10,7 +10,7 @@ const {isAuth} = require("../middlewares/authMiddleware")
 router.get("/", homeController.getHomeView)
 router.get("/404", homeController.get404View)
 
-// router.get("/allAds", addController.getCatalogView) <----checkname if catalog 
+router.get("/allAdds", addController.getCatalogView) //<----checkname if catalog 
 
 router.get("/create" , isAuth, addController.getCreateView) 
 router.post("/create", isAuth, addController.postCreate)
