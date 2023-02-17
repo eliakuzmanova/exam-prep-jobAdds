@@ -17,10 +17,12 @@ router.post("/create", isAuth, addController.postCreate)
 
 router.get("/details/:id", addController.getDetailsView)
 
-//router.get("/delete", isAuth, addController.getDelete)
+router.get("/delete/:id", isAuth, addController.getDelete)
 
 router.get("/edit/:id", isAuth, addController.getEditView)
 router.post("/edit/:id", isAuth, addController.postEdit)
+
+router.get("/apply/:id",isAuth, addController.getApplyView)
 
 router.get("/register", authController.getRegisterView);
 router.post("/register", authController.postRegister);
@@ -28,6 +30,9 @@ router.post("/register", authController.postRegister);
 router.get("/login", authController.getLoginView);
 router.post("/login", authController.postLogin);
 
-router.get("/logout", authController.getLogout);
+router.get("/logout", isAuth,authController.getLogout);
+
+router.get("/search", isAuth, addController.getSearchView);
+router.post("/search", isAuth, addController.postSearch);
 
 module.exports = router

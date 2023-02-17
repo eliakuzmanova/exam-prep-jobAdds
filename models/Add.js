@@ -25,10 +25,10 @@ const addSchmema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: "User"
     },
-    appliers: {
+    appliers: [{
      type: mongoose.Types.ObjectId,
-    ref: "Add"
-    }
+    ref: "User"
+    }]
 });
 
 const Add = mongoose.model('add', addSchmema);
