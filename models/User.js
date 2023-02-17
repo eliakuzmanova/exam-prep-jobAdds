@@ -17,10 +17,10 @@ const userSchema = new mongoose.Schema({
         required: [true, "Skills are required"],
         maxLength: [40, "Skills description is too long"]
     },
-    adds: {
+    adds: [{
         type: mongoose.Types.ObjectId,
         ref: "Add"
-    }
+    }]
 
 });
 

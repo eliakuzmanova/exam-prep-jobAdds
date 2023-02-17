@@ -4,7 +4,7 @@ exports.getAll = () => Add.find({}).lean();
 
 exports.getById = (id) => Add.findById(id).lean();
 
-exports.create = (data, userId) => Add.create({...data, owner: userId}); // <---- check owner
+exports.create = (data, userId) => Add.create({...data, author: userId}); // <---- check owner
 
 exports.update = (data, id) => Add.findByIdAndUpdate(id, {...data});
 

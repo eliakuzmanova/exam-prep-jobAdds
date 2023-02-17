@@ -1,4 +1,5 @@
 const addController = require("../services/addService");
+const errorUtils = require("../utils/errorUtils");
 
 // exports.getCatalogView = async (req, res) => {
 
@@ -12,27 +13,27 @@ const addController = require("../services/addService");
 //    };
 // }
 
-// exports.getCreateView = (req, res) => {
-//     try {
-//         res.render("add/create")
-//     } catch (err) {
-//         return errorUtils.errorResponse(res, "home/404", err, 404);
+exports.getCreateView = (req, res) => {
+    try {
+        res.render("add/create")
+    } catch (err) {
+        return errorUtils.errorResponse(res, "home/404", err, 404);
 
-//     }
-// };
+    }
+};
 
-// exports.postCreate = async (req, res) => {
-//     try {
-//         const data = req.body;
-//         const userId = req.user.userId; //<----- check userId
+exports.postCreate = async (req, res) => {
+    try {
+        const data = req.body;
+        const userId = req.user.userId; //<----- check userId
 
-//         await addController.create(data, userId)
+        await addController.create(data, userId)
 
-//         res.redirect("/allAds") // <---- check redirect
-//     } catch (err) {
-//         return errorUtils.errorResponse(res, "add/create", err, 404);
-//     }
-// };
+        res.redirect("/allAds") // <---- check redirect
+    } catch (err) {
+        return errorUtils.errorResponse(res, "add/create", err, 404);
+    }
+};
 
 // exports.getEditView = async (req, res) => {
 //     try {
