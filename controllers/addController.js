@@ -1,10 +1,10 @@
-const articleService = require("../services/articleService");
+const addController = require("../services/addService");
 
 // exports.getCatalogView = async (req, res) => {
 
 //     try{
-//       const articles = await articleService.getAll();
-//       res.render("article/catalog", {articles})
+//       const adds = await addController.getAll();
+//       res.render("add/allAds", {adds})
 //     } catch (err) {
 
 //     return errorUtils.errorResponse(res, "home/404", err, 404);
@@ -14,7 +14,7 @@ const articleService = require("../services/articleService");
 
 // exports.getCreateView = (req, res) => {
 //     try {
-//         res.render("article/create")
+//         res.render("add/create")
 //     } catch (err) {
 //         return errorUtils.errorResponse(res, "home/404", err, 404);
 
@@ -26,20 +26,20 @@ const articleService = require("../services/articleService");
 //         const data = req.body;
 //         const userId = req.user.userId; //<----- check userId
 
-//         await articleService.create(data, userId)
+//         await addController.create(data, userId)
 
-//         res.redirect("/catalog") // <---- check redirect
+//         res.redirect("/allAds") // <---- check redirect
 //     } catch (err) {
-//         return errorUtils.errorResponse(res, "article/create", err, 404);
+//         return errorUtils.errorResponse(res, "add/create", err, 404);
 //     }
 // };
 
 // exports.getEditView = async (req, res) => {
 //     try {
 //         const id = req.params.id;
-//         const article = await articleService.getById(id);
+//         const add = await addController.getById(id);
         
-//         res.render("article/edit", {article})
+//         res.render("add/edit", {add})
 //     } catch (err) {
 //         return errorUtils.errorResponse(res, "home/404", err, 404);
 //     }
@@ -50,18 +50,19 @@ const articleService = require("../services/articleService");
 //         const id = req.params.id;
 //         const data = req.body;
 
-//         await articleService.update(data, id);
+//         await addController.update(data, id);
 
 //         res.render(`/details/${id}`) // <---- check redirect
 //     } catch (err) {
-//         return errorUtils.errorResponse(res, "article/edit", err, 404);  
+//         return errorUtils.errorResponse(res, "add/edit", err, 404);  
 //     }
 // };
 
 // exports.getDelete = async (req, res) => {
 //     try {
 //         const id = req.params.id;
-//         await articleService.delete(id);
+//         await addController.delete(id);
+//    res.redirect("/allAds") // <---- check redirect 
 //     } catch (err) {
 //         return errorUtils.errorResponse(res, "home/404", err, 404);
 //     }
