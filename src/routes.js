@@ -15,10 +15,12 @@ router.get("/allAdds", addController.getCatalogView) //<----checkname if catalog
 router.get("/create" , isAuth, addController.getCreateView) 
 router.post("/create", isAuth, addController.postCreate)
 
+router.get("/details/:id", addController.getDetailsView)
+
 //router.get("/delete", isAuth, addController.getDelete)
 
-// router.get("/edit", isAuth, addController.getEditView)
-// router.post("/edit", isAuth, addController.postEdit)
+router.get("/edit/:id", isAuth, addController.getEditView)
+router.post("/edit/:id", isAuth, addController.postEdit)
 
 router.get("/register", authController.getRegisterView);
 router.post("/register", authController.postRegister);

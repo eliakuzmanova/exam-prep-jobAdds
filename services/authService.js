@@ -20,7 +20,7 @@ exports.register = async (email, password,skills) => {
 
 };
 
-exports.findUser = (username, email) => User.findOne({$or: [{username}, {email}]});
+exports.findUser = (email) => User.findOne({email});
 
 exports.findUserByEmail = (email) => User.findOne({email})
 
